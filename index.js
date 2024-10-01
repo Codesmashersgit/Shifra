@@ -75,13 +75,14 @@ document.addEventListener("DOMContentLoaded", () => {
             window.open("whatsapp://");
         } else if (lowerCaseMessage.includes("time")) {
             let time = new Date().toLocaleTimeString();
-            speak(`${time}`);
+            speak(`The current time is ${time}`);
         } else if (lowerCaseMessage.includes("date")) {
             let date = new Date().toLocaleDateString();
-            speak(`${date}`);
+            speak(`Today's date is ${date}`);
         } else {
             speak(`Here's what I found on the internet regarding "${message}"`);
             window.open(`https://www.google.com/search?q=${message}`);
         }
     }
 });
+
