@@ -49,28 +49,28 @@ document.addEventListener("DOMContentLoaded", () => {
     function takeCommand(message) {
         btn.style.display = "block";
         main.style.display = "none";
+        recognition.stop();
 
         let lowerCaseMessage = message.toLowerCase(); 
         if (lowerCaseMessage.includes("hello") || lowerCaseMessage.includes("hey")) {
-            speak("Hello Sir! What can I help you with today?");
+            speak("Hello maam! What can I help you with today?");
         } else if (lowerCaseMessage.includes("who are you") || lowerCaseMessage.includes("what is your name") || lowerCaseMessage.includes("who invented you")) {
             speak("I am Shifra, a virtual assistant created by suudhanshu.");
         } else if (lowerCaseMessage.includes("how are you")) {
             speak("I am fine, how about you?");
-        } 
-         else if (lowerCaseMessage.includes("open youtube") || lowerCaseMessage.includes("opening youtube")) {
+        } else if (lowerCaseMessage.includes("open youtube") || lowerCaseMessage.includes("opening youtube")) {
             speak("Opening YouTube");
             window.open("https://www.youtube.com/");
-        } else if (lowerCaseMessage.includes("open facebook")||(lowerCaseMessage.includes("opening facebook")) ){
+        } else if (lowerCaseMessage.includes("open facebook") || lowerCaseMessage.includes("opening facebook")) {
             speak("Opening Facebook");
             window.open("https://www.facebook.com/");
-        } else if (lowerCaseMessage.includes("open google")||(lowerCaseMessage.includes("opening google"))) {
+        } else if (lowerCaseMessage.includes("open google") || lowerCaseMessage.includes("opening google")) {
             speak("Opening Google");
             window.open("https://www.google.com/");
-        } else if (lowerCaseMessage.includes("open instagram")|| lowerCaseMessage.includes("opening instagram")) {
+        } else if (lowerCaseMessage.includes("open instagram") || lowerCaseMessage.includes("opening instagram")) {
             speak("Opening Instagram");
             window.open("https://www.instagram.com/");
-        } else if (lowerCaseMessage.includes("open whatsapp") || lowerCaseMessage.includes("open whatsapp")) {
+        } else if (lowerCaseMessage.includes("open whatsapp")) {
             speak("Opening WhatsApp");
             window.open("whatsapp://");
         } else if (lowerCaseMessage.includes("time")) {
