@@ -11,12 +11,11 @@ document.addEventListener("DOMContentLoaded", () => {
         textSpeech.volume = 1;
         textSpeech.lang = "en-GB"; 
         window.speechSynthesis.speak(textSpeech);
-        console.log("Speaking:", text);
+
     }
 
     let speechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     if (!speechRecognition) {
-        console.error("Speech recognition is not supported in this browser.");
         alert("Speech recognition is not supported in this browser.");
         return; 
     }
@@ -28,19 +27,16 @@ document.addEventListener("DOMContentLoaded", () => {
         let currentIndex = event.resultIndex;
         let transcript = event.results[currentIndex][0].transcript;
         content.innerText = transcript;
-        console.log("Transcript received:", transcript);
         takeCommand(transcript);
     };
 
     recognition.onerror = (event) => {
-        console.error("Speech recognition error:", event.error);
         speak("Sorry, I couldn't hear you. Could you please repeat?");
         btn.style.display = "block";
         main.style.display = "none";
     };
 
     btn.addEventListener("click", () => {
-        console.log("Button clicked");
         recognition.start();
         btn.style.display = "none";
         main.style.display = "block";
