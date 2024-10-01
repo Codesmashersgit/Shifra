@@ -58,19 +58,19 @@ document.addEventListener("DOMContentLoaded", () => {
         } else if (lowerCaseMessage.includes("how are you?")) {
             speak("I am fine, how about you?");
         } 
-         else if (lowerCaseMessage.includes("open youtube")) {
+         else if (lowerCaseMessage.includes("open youtube") || lowerCaseMessage.includes("opening youtube")) {
             speak("Opening YouTube");
             window.open("https://www.youtube.com/");
-        } else if (lowerCaseMessage.includes("open facebook")) {
+        } else if (lowerCaseMessage.includes("open facebook")||(lowerCaseMessage.includes("opening facebook")) ){
             speak("Opening Facebook");
             window.open("https://www.facebook.com/");
-        } else if (lowerCaseMessage.includes("open google")) {
+        } else if (lowerCaseMessage.includes("open google")||(lowerCaseMessage.includes("opening google"))) {
             speak("Opening Google");
             window.open("https://www.google.com/");
-        } else if (lowerCaseMessage.includes("open instagram")) {
+        } else if (lowerCaseMessage.includes("open instagram")||lowerCaseMessage.includes("opening instagram")) {
             speak("Opening Instagram");
             window.open("https://www.instagram.com/");
-        } else if (lowerCaseMessage.includes("open whatsapp")) {
+        } else if (lowerCaseMessage.includes("open whatsapp") ||lowerCaseMessage.includes("open whatsapp")) {
             speak("Opening WhatsApp");
             window.open("whatsapp://");
         } else if (lowerCaseMessage.includes("time")) {
