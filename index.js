@@ -11,12 +11,12 @@ document.addEventListener("DOMContentLoaded", () => {
         textSpeech.volume = 1;
         textSpeech.lang = "en-GB"; 
         window.speechSynthesis.speak(textSpeech);
-        console.log("Speaking:", text);
+        // console.log("Speaking:", text);
     }
 
     let speechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     if (!speechRecognition) {
-        console.error("Speech recognition is not supported in this browser.");
+        // console.error("Speech recognition is not supported in this browser.");
         alert("Speech recognition is not supported in this browser.");
         return; 
     }
@@ -28,19 +28,19 @@ document.addEventListener("DOMContentLoaded", () => {
         let currentIndex = event.resultIndex;
         let transcript = event.results[currentIndex][0].transcript;
         content.innerText = transcript;
-        console.log("Transcript received:", transcript);
+        // console.log("Transcript received:", transcript);
         takeCommand(transcript);
     };
 
     recognition.onerror = (event) => {
-        console.error("Speech recognition error:", event.error);
+        // console.error("Speech recognition error:", event.error);
         speak("Sorry, I couldn't hear you. Could you please repeat?");
         btn.style.display = "block";
         main.style.display = "none";
     };
 
     btn.addEventListener("click", () => {
-        console.log("Button clicked");
+        // console.log("Button clicked");
         recognition.start();
         btn.style.display = "none";
         main.style.display = "block";
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         let lowerCaseMessage = message.toLowerCase(); 
         if (lowerCaseMessage.includes("hello") || lowerCaseMessage.includes("hey")) {
-            speak("Hello! What can I help you with today?");
+            speak("Hello Sir! What can I help you with today?");
         } else if (lowerCaseMessage.includes("who are you?") || lowerCaseMessage.includes("what is your name")) {
             speak("I am Shifra, a virtual assistant created by suudhanshu.");
         } else if (lowerCaseMessage.includes("how are you?")) {
@@ -75,10 +75,10 @@ document.addEventListener("DOMContentLoaded", () => {
             window.open("whatsapp://");
         } else if (lowerCaseMessage.includes("time")) {
             let time = new Date().toLocaleTimeString();
-            speak(`The current time is ${time}`);
+            speak(`${time}`);
         } else if (lowerCaseMessage.includes("date")) {
             let date = new Date().toLocaleDateString();
-            speak(`Today's date is ${date}`);
+            speak(`${date}`);
         } else {
             speak(`Here's what I found on the internet regarding "${message}"`);
             window.open(`https://www.google.com/search?q=${message}`);
