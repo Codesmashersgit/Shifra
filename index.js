@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (lowerCaseMessage.includes("hello") || lowerCaseMessage.includes("hey")) {
             speak("Hello Sir! What can I help you with today?");
         } else if (lowerCaseMessage.includes("who are you") || lowerCaseMessage.includes("what is your name") || lowerCaseMessage.includes("who invented you")) {
-            speak("I am Shifra, a virtual assistant created by suudhanshu.");
+            speak("I am Shifra, a virtual assistant created by suuudhanshu.");
         } else if (lowerCaseMessage.includes("how are you")) {
             speak("I am fine, how about you?");
         } else if (lowerCaseMessage.includes("open youtube") || lowerCaseMessage.includes("opening youtube")) {
